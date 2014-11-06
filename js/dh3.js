@@ -1,5 +1,5 @@
 ﻿angular.module('dh3', [])
-    .controller('DieHardController', ['$scope', '$window', '$interval', function ($scope, $window, $interval) {
+    .controller('DieHardController', ['$scope', '$window', '$interval', '$timeout', function ($scope, $window, $interval, $timeout) {
         //dropdown vars
         $scope.fiveGalChoice = 'Empty';
         $scope.threeGalChoice = 'Empty';
@@ -86,7 +86,7 @@
                     break;
             }
         };
-        
+
         $scope.endCheck = function () {
             if($scope.bombTimer == 0 && !youWon) { //timer has already expired, don't process
                 $scope.showConfirm('You are already dead!');
@@ -96,7 +96,7 @@
                 $scope.showConfirm('You already defused the bomb!');
                 return true;
             }
-            
+
             return false;
         };
 
@@ -162,19 +162,20 @@
         };
 
         $scope.showConfirm = function (text) {
-            var res = $window.confirm(text + hint);
+            var res;
+            $timeout(function(){res = $window.confirm(text + hint)}, 500);
             if(res == true) {
                 location.reload();
             }
-            
+
             //$window.alert(youWon.toString());
         };
 
         $scope.tryJug = function () {
             if($scope.fiveGalAmt == 4 && $scope.bombTimer != 0) { //win condition
                 youWon = true;
-                $scope.showConfirm('You saved the day!');
                 $scope.mainImg = 'images/diehardhappyend.jpg';
+                $scope.showConfirm('You saved the day!');
                 $scope.stopTimer();
             }
             else if($scope.bombTimer == 0 && !youWon) { //timer has already expired
