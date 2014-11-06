@@ -166,7 +166,8 @@
             if(res == true) {
                 location.reload();
             }
-            $window.alert(youWon.toString());
+            
+            //$window.alert(youWon.toString());
         };
 
         $scope.tryJug = function () {
