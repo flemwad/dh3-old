@@ -162,15 +162,12 @@
         };
 
         $scope.showConfirm = function (text) {
-            var res;
             $timeout(function(){
-                res = $window.confirm(text + hint)
-                $window.alert(res.toString());
+                var res = $window.confirm(text + hint)
+                if(res == true) {
+                    location.reload();
+                }
             }, 500);
-            
-            if(res == true) {
-                location.reload();
-            }
         };
 
         $scope.tryJug = function () {
