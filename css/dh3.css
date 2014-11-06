@@ -27,7 +27,7 @@ b {
     background-image: url('../images/bomblol.png');
     background-repeat:no-repeat;
     background-size:contain;
-    margin-top:30px;
+    margin-top:50px;
     height:333px; 
     width:288px;
 }
@@ -59,7 +59,7 @@ b {
 
 #threeimg {
     margin-left:30px;
-    margin-right:60px;
+    margin-right:80px;
     margin-top:145px;
 }
 
@@ -78,6 +78,6 @@ b {
 #tryjug {
     width:250px;
     height:75px;
-    margin-left:100px;
+    margin-left:50px;
     margin-right:50px;
 }
