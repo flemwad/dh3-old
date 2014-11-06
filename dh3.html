@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- The only way I could get this to debug in a win8 store app is to add the ng-csp tag https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html ng-csp ng-app="dh3">
+
+<script src="js/angular.min.js"></script>
+<script src="js/dh3.js"></script>
+<head>
+    <title>DH3</title>
+
+    <!-- DH3 references -->
+    <link href="css/dh3.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="title">Die Hard 3 Jug Riddle</div>
+<div id="content" ng-controller="DieHardController">
+    <!-- Game Summary -->
+    <img id="fount" ng-src="{{mainImg}}" alt="Die Hard 3" height="242" width="565" />
+    <p style="text-align:center; margin-bottom:30px">
+        You must place exactly four gallons of water on the scale before time runs out.
+        <br /> Run out of time and the bomb will explode!
+        <br /> Place the wrong amount on the scale and the bomb will explode!
+    </p>
+
+    <!-- Interaction Table -->
+    <table>
+        <tr> <!-- Images row -->
+            <td>
+                <span>
+                    <img id="threeimg" ng-src="{{threeGalImg}}" height="256" width="200" />
+                    <img style="margin-right:60px;" src="images/bomblol.png" height="333" width="288" />
+                    <b>{{bombTimer| secsToMins}}</b> <!-- customer timer -->
+                    <img ng-src="{{fiveGalImg}}" height="400" width="200" />
+                </span>
+            </td>
+        </tr>
+        <tr> <!-- Input Row -->
+            <td>
+                <span>
+                    <select ng-model="threeGalChoice">
+                       <option ng-repeat="g in galChoices">{{g}}</option>
+                    </select>
+                    <button id="perf3jug" ng-click="updateThreeGal(threeGalChoice)">GO</button>
+                    <button id="tryjug" ng-click="tryJug()">Place Jug</button>
+                    <select ng-model="fiveGalChoice">
+                        <option ng-repeat="g in galChoices">{{g}}</option>
+                    </select>
+                    <button id="perf5jug" ng-click="updateFiveGal(fiveGalChoice)">GO</button>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

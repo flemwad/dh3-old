@@ -1,0 +1,73 @@
+﻿body {
+    background-color:#e2e2e2;
+}
+
+select {
+    width:150px;
+    height:75px;
+    margin-left:25px;
+}
+
+table {
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:30px;
+}
+
+b {
+    position:absolute;
+    left:780px;
+    top:610px;
+    font-size:45px;
+    color:red;
+}
+
+#title {
+    text-align:center; 
+    font-weight:600;
+    color:black; 
+    font-size:50px; 
+}
+
+#content {
+    background-color:white; 
+    padding:20px;
+    border:solid;
+    border-color:black;
+    border-width:4px;
+}
+
+#fount {
+    display:block;
+    border:solid;
+    border-color:black;
+    border-width:5px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:40px;
+}
+
+#threeimg {
+    margin-left: 30px;
+    margin-right:105px;
+    margin-top:145px;
+}
+
+#perf3jug {
+    width:50px;
+    height:75px;
+    margin-left:5px;
+}
+
+#perf5jug {
+    width:50px;
+    height:75px;
+    margin-left:5px;
+}
+
+#tryjug {
+    width:250px;
+    height:75px;
+    margin-left:120px;
+    margin-right:50px;
+}
