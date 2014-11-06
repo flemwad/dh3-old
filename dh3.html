@@ -2,13 +2,13 @@
 <!-- The only way I could get this to debug in a win8 store app is to add the ng-csp tag https://docs.angularjs.org/api/ng/directive/ngCsp -->
 <html ng-csp ng-app="dh3">
 
-<script src="js/angular.min.js"></script>
-<script src="js/dh3.js"></script>
+<script src="#/js/angular.min.js"></script>
+<script src="#/js/dh3.js"></script>
 <head>
     <title>DH3</title>
 
     <!-- DH3 references -->
-    <link href="css/dh3.css" rel="stylesheet" type="text/css" />
+    <link href="#/css/dh3.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="title">Die Hard 3 Jug Riddle</div>
@@ -27,7 +27,7 @@
             <td>
                 <span>
                     <img id="threeimg" ng-src="{{threeGalImg}}" height="256" width="200" />
-                    <img style="margin-right:60px;" src="images/bomblol.png" height="333" width="288" />
+                    <img style="margin-right:60px;" src="#/images/bomblol.png" height="333" width="288" />
                     <b>{{bombTimer| secsToMins}}</b> <!-- customer timer -->
                     <img ng-src="{{fiveGalImg}}" height="400" width="200" />
                 </span>
