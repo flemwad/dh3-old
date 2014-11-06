@@ -166,12 +166,13 @@
             if(res == true) {
                 location.reload();
             }
+            $window.alert(youWon.toString());
         };
 
         $scope.tryJug = function () {
             if($scope.fiveGalAmt == 4 && $scope.bombTimer != 0) { //win condition
-                $scope.showConfirm('You saved the day!');
                 var youWon = true;
+                $scope.showConfirm('You saved the day!');
                 $scope.mainImg = 'images/diehardhappyend.jpg';
                 $scope.stopTimer();
             }
