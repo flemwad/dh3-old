@@ -171,7 +171,7 @@
 
         $scope.tryJug = function () {
             if($scope.fiveGalAmt == 4 && $scope.bombTimer != 0) { //win condition
-                var youWon = true;
+                youWon = true;
                 $scope.showConfirm('You saved the day!');
                 $scope.mainImg = 'images/diehardhappyend.jpg';
                 $scope.stopTimer();
