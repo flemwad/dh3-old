@@ -163,8 +163,11 @@
 
         $scope.showConfirm = function (text) {
             var res;
-            $timeout(function(){res = $window.confirm(text + hint)}, 500);
-            $window.alert(res.toString());
+            $timeout(function(){
+                res = $window.confirm(text + hint)
+                $window.alert(res.toString());
+            }, 500);
+            
             if(res == true) {
                 location.reload();
             }
