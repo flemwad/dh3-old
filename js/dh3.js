@@ -6,9 +6,9 @@
         $scope.galChoices = ['Empty', 'Fill', 'Fill From Other Jug'];
 
         //starting images, also expression values for ng-src data binding
-        $scope.threeGalImg = 'images/empty3.png';
-        $scope.fiveGalImg = 'images/empty5.png';
-        $scope.mainImg = 'images/diehardfount.jpg';
+        $scope.threeGalImg = '#/images/empty3.png';
+        $scope.fiveGalImg = '#/images/empty5.png';
+        $scope.mainImg = '#/images/diehardfount.jpg';
 
         //gallon number amounts
         $scope.threeGalAmt = 0;
@@ -28,11 +28,11 @@
 
             switch(choice) {
                 case 'Empty':
-                    $scope.threeGalImg = 'images/empty3.png';
+                    $scope.threeGalImg = '#/images/empty3.png';
                     $scope.threeGalAmt = 0;
                     break;
                 case 'Fill':
-                    $scope.threeGalImg = 'images/fullgal3.png';
+                    $scope.threeGalImg = '#/images/fullgal3.png';
                     $scope.threeGalAmt = 3;
                     break;
                 case 'Fill From Other Jug':
@@ -82,11 +82,11 @@
 
             switch(choice) {
                 case 'Empty':
-                    $scope.fiveGalImg = 'images/empty5.png';
+                    $scope.fiveGalImg = '#/images/empty5.png';
                     $scope.fiveGalAmt = 0;
                     break;
                 case 'Fill':
-                    $scope.fiveGalImg = 'images/fullgal5.png';
+                    $scope.fiveGalImg = '#/images/fullgal5.png';
                     $scope.fiveGalAmt = 5;
                     break;
                 case 'Fill From Other Jug':
@@ -101,43 +101,43 @@
 
             switch ($scope.threeGalAmt) {
                 case 0:
-                    $scope.threeGalImg = 'images/empty3.png';
+                    $scope.threeGalImg = '#/images/empty3.png';
                     break;
                 case 1:
-                    $scope.threeGalImg = 'images/1gal3.png';
+                    $scope.threeGalImg = '#/images/1gal3.png';
                     break;
                 case 2:
-                    $scope.threeGalImg = 'images/2gal3.png';
+                    $scope.threeGalImg = '#/images/2gal3.png';
                     break;
                 case 3:
-                    $scope.threeGalImg = 'images/fullgal3.png';
+                    $scope.threeGalImg = '#/images/fullgal3.png';
                     break;
             }
 
             switch ($scope.fiveGalAmt) {
                 case 0:
-                    $scope.fiveGalImg = 'images/empty5.png';
+                    $scope.fiveGalImg = '#/images/empty5.png';
                     break;
                 case 1:
-                    $scope.fiveGalImg = 'images/1gal5.png';
+                    $scope.fiveGalImg = '#/images/1gal5.png';
                     break;
                 case 2:
-                    $scope.fiveGalImg = 'images/2gal5.png';
+                    $scope.fiveGalImg = '#/images/2gal5.png';
                     break;
                 case 3:
-                    $scope.fiveGalImg = 'images/3gal5.png';
+                    $scope.fiveGalImg = '#/images/3gal5.png';
                     break;
                 case 4:
-                    $scope.fiveGalImg = 'images/4gal5.png';
+                    $scope.fiveGalImg = '#/images/4gal5.png';
                     break;
                 case 5:
-                    $scope.fiveGalImg = 'images/fullgal5.png';
+                    $scope.fiveGalImg = '#/images/fullgal5.png';
                     break;
             }
         };
 
         $scope.boom = function () {
-            $scope.mainImg = 'images/diehardexplosion.png';
+            $scope.mainImg = '#/images/diehardexplosion.png';
             $scope.showConfirm('The whole city block has been demolished, with you in it!');
         };
 
@@ -166,7 +166,7 @@
         $scope.tryJug = function () {
             if($scope.fiveGalAmt == 4 && $scope.bombTimer != 0) { //win condition
                 $scope.showConfirm('You saved the day!');
-                $scope.mainImg = 'images/diehardhappyend.jpg';
+                $scope.mainImg = '#/images/diehardhappyend.jpg';
                 $scope.stopTimer();
             }
             else if($scope.bombTimer == 0) { //timer has already expired
