@@ -28,7 +28,7 @@ b {
     background-repeat:no-repeat;
     background-size:contain;
     margin-top:60px;
-    margin-right:50px;
+    margin-right:70px;
     height:333px; 
     width:288px;
 }
@@ -79,6 +79,4 @@ b {
 #tryjug {
     width:250px;
     height:75px;
-    margin-left:10px;
-    margin-right:10px;
 }
