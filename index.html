@@ -39,17 +39,19 @@
         </tr>
         <tr> <!-- Input Row -->
             <td>
-                <span>
-                    <select ng-model="threeGalChoice">
-                       <option ng-repeat="g in galChoices">{{g}}</option>
-                    </select>
-                    <button id="perf3jug" ng-click="updateThreeGal(threeGalChoice)">GO</button>
-                    <button id="tryjug" ng-click="tryJug()">Place Jug</button>
-                    <select ng-model="fiveGalChoice">
-                        <option ng-repeat="g in galChoices">{{g}}</option>
-                    </select>
-                    <button id="perf5jug" ng-click="updateFiveGal(fiveGalChoice)">GO</button>
-                </span>
+                <select ng-model="threeGalChoice">
+                   <option ng-repeat="g in galChoices">{{g}}</option>
+                </select>
+                <button id="perf3jug" ng-click="updateThreeGal(threeGalChoice)">GO</button>
+            </td>
+            <td>
+                <button id="tryjug" ng-click="tryJug()">Place Jug</button>
+            </td>
+            <td>
+                <select ng-model="fiveGalChoice">
+                    <option ng-repeat="g in galChoices">{{g}}</option>
+                </select>
+                <button id="perf5jug" ng-click="updateFiveGal(fiveGalChoice)">GO</button> 
             </td>
         </tr>
     </table>
