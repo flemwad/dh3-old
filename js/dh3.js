@@ -164,11 +164,10 @@
         $scope.showConfirm = function (text) {
             var res;
             $timeout(function(){res = $window.confirm(text + hint)}, 500);
+            $window.alert(res.toString());
             if(res == true) {
                 location.reload();
             }
-
-            //$window.alert(youWon.toString());
         };
 
         $scope.tryJug = function () {
