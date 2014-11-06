@@ -22,6 +22,14 @@ b {
     color:red;
 }
 
+#bombdiv {
+   background-image: url('images/bomblol.png');
+   background-repeat:no-repeat;
+   background-size:contain;
+   height:333px; 
+   width:288px;
+}
+
 #title {
     text-align:center; 
     font-weight:600;
