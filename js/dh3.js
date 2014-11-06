@@ -10,7 +10,7 @@
         $scope.fiveGalImg = 'images/empty5.png';
         $scope.mainImg = 'images/diehardfount.jpg';
 
-        //gallon number amounts
+        //gallon number amounts, these probably don't need to be on the scope
         $scope.threeGalAmt = 0;
         $scope.fiveGalAmt = 0;
 
@@ -19,6 +19,7 @@
 
         //convenience vars
         var hint = ' Try again? Hint: There are two possible solutions';
+        var youWon = false;
 
         $scope.updateThreeGal = function (choice) {
             if($scope.bombTimer == 0) { //timer has already expired, don't process
@@ -56,10 +57,8 @@
         };
 
         $scope.processFiveTransfer = function () {
-            if($scope.bombTimer == 0) { //timer has already expired, don't process
-                $scope.showConfirm('You are already dead!');
-                //return;
-            }
+            var check = $scope.endCheck();
+            if(check) return;
 
             var origAmt = $scope.fiveGalAmt;
             $scope.fiveGalAmt = $scope.fiveGalAmt + $scope.threeGalAmt;
@@ -75,10 +74,8 @@
         };
 
         $scope.updateFiveGal = function (choice) {
-            if($scope.bombTimer == 0) { //timer has already expired, don't process
-                $scope.showConfirm('You are already dead!');
-                return;
-            }
+            var check = $scope.endCheck();
+            if(check) return;
 
             switch(choice) {
                 case 'Empty':
@@ -93,6 +90,19 @@
                     $scope.processFiveTransfer();
                     break;
             }
+        };
+        
+        $scope.endCheck = function () {
+            if($scope.bombTimer == 0 && !youWon) { //timer has already expired, don't process
+                $scope.showConfirm('You are already dead!');
+                return true;
+            }
+            else if ($scope.bombTimer == 0 && youWon) {
+                $scope.showConfirm('You already defused the bomb!');
+                return true;
+            }
+            
+            return false;
         };
 
         //evals jug amounts and adjusts img accordingly
@@ -166,11 +176,15 @@
         $scope.tryJug = function () {
             if($scope.fiveGalAmt == 4 && $scope.bombTimer != 0) { //win condition
                 $scope.showConfirm('You saved the day!');
+                var youWon = true;
                 $scope.mainImg = 'images/diehardhappyend.jpg';
                 $scope.stopTimer();
             }
-            else if($scope.bombTimer == 0) { //timer has already expired
+            else if($scope.bombTimer == 0 && !youWon) { //timer has already expired
                 $scope.showConfirm('You are already dead!');
+            }
+            else if ($scope.bombTimer == 0 && youWon) {
+                $scope.showConfirm('You already defused the bomb!');
             }
             else { //if user press it too early and the amount isn't right
                 $scope.stopTimer();
