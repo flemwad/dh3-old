@@ -22,10 +22,8 @@
         var youWon = false;
 
         $scope.updateThreeGal = function (choice) {
-            if($scope.bombTimer == 0) { //timer has already expired, don't process
-                $scope.showConfirm('You are already dead!');
-                return;
-            }
+            var check = $scope.endCheck();
+            if(check) return;
 
             switch(choice) {
                 case 'Empty':
@@ -57,9 +55,6 @@
         };
 
         $scope.processFiveTransfer = function () {
-            var check = $scope.endCheck();
-            if(check) return;
-
             var origAmt = $scope.fiveGalAmt;
             $scope.fiveGalAmt = $scope.fiveGalAmt + $scope.threeGalAmt;
 
